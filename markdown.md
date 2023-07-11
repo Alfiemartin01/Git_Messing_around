@@ -62,8 +62,8 @@ Time for a Strobe Sentence Break!!!
 | This | Web | Page | Is  | A   | Mess | Also | Has | A   | Table |
 | ---- | --- | ---- | --- | --- | ---- | ---- | --- | --- | ----- |
 |  I   |  H  |  O   |  P  | E   |  T   |  H   |  I  | S   |  T    |
-|  A   |  B  |  L   |  E  | W   |  O   |  R   |  K  | S   |       |
-|      |     |      |     |     |      |      |     |     |       |
+|  A   |  B  |  L   |  E  | W   |  O   |  R   |  K  | S   |  i    |
+|  l   |  e  |  f   |  t  | s   | p    |  a   | c   | e   |  s    |
 
 A Github Link You Got Through The [**_Github_**][github] Link! (INCEPTION)
 
