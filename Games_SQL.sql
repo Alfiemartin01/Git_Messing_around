@@ -103,7 +103,7 @@ VALUES
 
 INSERT INTO Games(Game_genre,Game_Name,Game_Price,Stock,Rating,FK_Supplier_ID)
 VALUES
-('Strategy','Magic_The_Gathering',22.99,19,3.4,2)
+('Strategy','Magic_The_Gathering',22.99,19,3.4,2),
 ('RPG','Final_Fantasy_XVI',109.01,1,4.8,1);
 
 INSERT INTO Transaction(Date_time,FK_Customer_ID,FK_Employee_ID,FK_Game_ID)
