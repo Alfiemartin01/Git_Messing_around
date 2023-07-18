@@ -1,4 +1,4 @@
-books = {'JKrowling':['Harry Potter'],'Lewis Carroll':['Alice in Wonderland','I don\'t know what else she wrote']}
+books = {'JKrowling':['Harry Potter'],'Lewis Carroll':['Alice in Wonderland','Alice Through the Looking Glass']}
 
 u_author = str(input("Please ive the fullname of an author")) 
 print(', '.join(books[u_author]))
