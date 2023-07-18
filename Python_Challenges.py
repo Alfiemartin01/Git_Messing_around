@@ -3,7 +3,7 @@ def Times_Table_Grid(n):
     str_grid = ""
     for i in range(1,n+1):
         for j in range(1,n+1):
-            str_grid += (str(i*j)+"\t")
+            str_grid += (f"{str(i*j)}\t")
         str_grid += "\n"
     return(str_grid)
 
@@ -35,12 +35,12 @@ class Rectangle:
         return(self.width * self.height)
 
 r1 = Rectangle(3,4)
-print("Area = " + str(r1.area()))
+print(f"Area = {str(r1.area())}")
 
 #Seven not Five
 snf = ""
 for i in range(2000,3201):
     if (i%7 == 0) and (i%5 != 0):
-        snf += (str(i)+", ")
+        snf += (f"{str(i)}, ")
 print(snf)
 
