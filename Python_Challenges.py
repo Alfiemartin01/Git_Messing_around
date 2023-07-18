@@ -38,9 +38,9 @@ r1 = Rectangle(3,4)
 print(f"Area = {str(r1.area())}")
 
 #Seven not Five
-snf = ""
+snf = []
 for i in range(2000,3201):
     if (i%7 == 0) and (i%5 != 0):
-        snf += (f"{str(i)}, ")
-print(snf)
+        snf.append(str(i))
+print(", ".join(snf))
 
