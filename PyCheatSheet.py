@@ -99,7 +99,9 @@ def Function():             #Creates a new function which can be called upon
     ages = {"Alfie":20, "Jasmine":20, "Tom":32} #Dictoinary variable type
     ages["Alfie"] #Returns the value associated (20)
     ages.get("Jasmine", "...") #Returns value associated or returns "..."  by default
-    
+    ages["Athena"] = 22 #Adds a new variable to the dictionary
+    ages.pop("Tom") #Removes the key and value
+
 ################### String Functions ########################################
     
     str_1 = "Hello " + "World" #Outputs "Hello World" as 1 string
