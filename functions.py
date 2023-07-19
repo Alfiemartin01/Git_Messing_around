@@ -12,7 +12,7 @@ def grade(name,hscore,ascore,escore):
 
     return(f"{name} scored {hscore + ascore + escore} our of 175 getting them a {ograde}")
     
-print(grade("Athena",12,27,60))
+print(grade(input("name"),int(input("Homework Score")),int(input("Assessment Score")),int(input("Exam Score"))))
 
 
 # 1. Write a Python function to find the maximum of three numbers.
@@ -77,6 +77,22 @@ def nuplow(str1):
     return(f"uppercase = {up}, lowercase = {low}")
 
 print(nuplow("Hello World....."))
+
+#8. Write a Python function that takes a list and returns a new list with distinct elements from the first list.
+def dlist(listA):
+    return(list(set(listA)))
+
+print(dlist([1,2,2,3,4,5,66,7,8,8,8,8]))
+
+#9. Write a Python function that takes a number as a parameter and checks whether the number is prime or not.
+def isprime(num1):
+    for i in range(2,(num1//2)+1):
+        if num1%i == 0:
+            return("Not Prime")
+    return("Prime")
+
+print(isprime(97))
+
 
 
 
