@@ -366,6 +366,12 @@ class Graph():
             for val in row: 
                 print('{:4}'.format(val),end="") 
 
+
+
+############### Debugging #####################
+
+
+
 # 3rd-party libraries web-based
 #Django , CherryPy , Flask , BeautifulSoup
 # 3rd-party libraries math-based
@@ -384,6 +390,22 @@ class Graph():
     for line in sys.stdin: #Gets inputs from the user 
         sys.stdout.write(line) #Outputs the variable 'line'
         print(line, file = sys.stderr) #outputs 'line' as an error
+############### pdb #############################
+    import pdb
+
+    #pdb.set_trace() # open the pdb command prompt
+    #where # tells which line you're on
+    #list #shows the line  you're on
+    #s - Step, execute until next line
+    #n - Next, execute until next line (doesn't step into functions)
+    #p - print value of reference or variable.
+    #ll - list all lines of current file or function    
+    #b num - Break execution at line num
+    #c - Continue execution until next breakpoint
+    #q - Quit
+    #retval #print the return of the last function
+    #
+
 ############## itertools ########################
     import itertools as it
     #Infinite Iterations:
