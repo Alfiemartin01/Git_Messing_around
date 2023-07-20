@@ -367,11 +367,6 @@ class Graph():
                 print('{:4}'.format(val),end="") 
 
 
-
-############### Debugging #####################
-
-
-
 # 3rd-party libraries web-based
 #Django , CherryPy , Flask , BeautifulSoup
 # 3rd-party libraries math-based
@@ -393,7 +388,7 @@ class Graph():
 ############### pdb #############################
     import pdb
 
-    #pdb.set_trace() # open the pdb command prompt
+    pdb.set_trace() # open the pdb command prompt
     #where # tells which line you're on
     #list #shows the line  you're on
     #s - Step, execute until next line
@@ -546,7 +541,7 @@ class Graph():
     
 ########### PIL #######################
     #used for image editing and creation 
-    import PIL 
+    import PIL
 
     New_Image = PIL.Image.new(mode = "RGB", size = (1000,1000))
     # This creates a new png file, Default Black. 
