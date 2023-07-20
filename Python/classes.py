@@ -51,7 +51,7 @@ rent.withdraw(100)
 food.transfer(rent,152)
 
 
-
+#####Polygon
 
 class Rectangle:
     
@@ -81,6 +81,8 @@ print(s1.perim())
 print(r1.perim())
 
 
+
+######LotteryBall
 
 import random
 class LotteryBall:
