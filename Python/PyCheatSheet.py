@@ -208,6 +208,12 @@ def function4(arg:int): #ensures arg is an int
     pass
 
 ################# Object Orientated Programming ######################
+#4 principles:
+#1. Inheritence 
+#2. Polymorphism
+#3. Abstraction
+#4. Encapsulation
+
 class Cat: #class is used to create objects 
     'Contents of __doc__'
                ##Functions in the class are known as methods
@@ -480,6 +486,9 @@ class Graph():
     rng.gammavariate(alpha,beta) #Return a value from the gamma distribution
     rng.gauss(mu,sigma) #Return a value from the normal distribution
     rng.lognormvariate(mu,sigma) #Return a value from the log normal distribution
+###########Abstract Base Class ####################
+    import abc
+
 
 ############# NumPy ###############################
     import numpy as np
