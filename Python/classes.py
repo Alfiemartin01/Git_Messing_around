@@ -95,11 +95,12 @@ class LotteryBall:
     
     def out_of_hat(self):
         total_balls = self.total()
+        amount_taken = random.randint(0,total_balls)
         balls_left = self.no_col
         colours = list(i for i in self.no_col)
         balls_taken = {}
 
-        for i in range(amount_taken:=random.randint(0,total_balls)):
+        for i in range(amount_taken):
             rng_num = random.randint(0,len(balls_left)-1)
             balls_left[colours[rng_num]] -= 1
 
@@ -110,6 +111,7 @@ class LotteryBall:
 
             if balls_left[colours[rng_num]] == 0:
                 del(balls_left[colours[rng_num]])
+                
         
         print(f"no. of balls taken: {amount_taken} \nballs taken: {balls_taken} \nballs remaining{balls_left}")
 
