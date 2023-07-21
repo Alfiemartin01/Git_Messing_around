@@ -373,7 +373,8 @@ class Graph():
                 print('{:4}'.format(val),end="") 
 
 ##################### Testing ##################
-
+#run in bash 
+#python3 -m pytest <testfile> --cov= <directory>/<file to test>
 
 
 # 3rd-party libraries web-based
