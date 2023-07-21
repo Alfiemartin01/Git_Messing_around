@@ -1,4 +1,4 @@
 import random 
 
-def dice():
-    return(random.randint(1,6))
+def dice(num):
+    return(random.randint(1,num))

@@ -374,7 +374,7 @@ class Graph():
 
 
 # 3rd-party libraries web-based
-#Django , CherryPy , Flask , BeautifulSoup
+# Django , CherryPy , Flask , BeautifulSoup
 # 3rd-party libraries math-based
 # matplotlib , NumPy , SciPy
 # 3rd-party libraries game-based
@@ -405,7 +405,7 @@ class Graph():
     #c - Continue execution until next breakpoint
     #q - Quit
     #retval #print the return of the last function
-    #
+    
 
 ############## itertools ########################
     import itertools as it
