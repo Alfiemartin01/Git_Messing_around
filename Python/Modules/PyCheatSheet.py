@@ -233,7 +233,15 @@ class Cat: #class is used to create objects
         passur = self.colour #self sets a value to the attribute of the object
     def __add__(self, other): # There are other 'magic' methods such as __add__ which reassigns +
         return(Cat)
-        
+#Types of Magic methods include:
+#__add__
+#__sub__
+#__str__
+#__lt__
+#__le__
+#__eq__
+
+
 felix = Cat("ginger") #This is an object 
 felix.colour #returns the value 'ginger'
 felix.meow #runs the meow method for felix attributes
@@ -544,12 +552,12 @@ class Graph():
     # Used to Create basic window applications easily
     import tkinter as tk
 
-    root = tk.Tk() #Creates a new window
+    root = tk.Tk(className='calc') #Creates a new window witht title calc
     root.title("Calculator") #Names the window calculator 
 
     My_label = tk.Label(root, text = "Hello World") #Creates Label
 
-    My_button = tk.Button(root, text="click me", state=DISABLED, padx=50, pady=50, fg = "orange", bg ="#ffffff",  command=Function) 
+    My_button = tk.Button(root, text="click me", state="disabled", padx=50, pady=50, fg = "orange", bg ="#ffffff",  command=Function) 
     #Creates a button which isn't clickable, padx,y increases the size of the button
     #command is used to select a function which the button should run when it is pressed
     #fg and bg makes the foreground and background, orange and purple 
@@ -559,8 +567,9 @@ class Graph():
     Text_Box.insert(0, "I AM A TEXT BOX") #adds text to the text box 
 
     My_label.pack() #Displays it on screen in the first open spot
-
     My_label.grid(row=0, column=0) #places in a grid order
+
+    My_button.destroy() #Removes the button
 
     root.mainloop() #Opens the window
     
