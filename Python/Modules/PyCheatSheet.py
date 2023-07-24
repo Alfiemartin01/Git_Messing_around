@@ -591,6 +591,9 @@ class Graph():
     New_Image.save("Path to png file")
     #Saves the image to a new file location
 
+########### Flask ##########################
+
+
 ########### os.path ########################
     import os.path 
   
