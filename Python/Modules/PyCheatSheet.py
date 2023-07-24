@@ -15,6 +15,7 @@ Int1 = 4
 Int2 = 5
 Int3 = 6
 Lst1 = [1,2,3]
+
 ######################### Basic Operations ############################
 
 def Function():             #Creates a new function which can be called upon
@@ -204,8 +205,14 @@ def function2(food="spam"): # giving a default value, means a value doesnt need 
 def function3(**args): # ** returns a dictionary with name and values
     pass
 function3(a=1,b=2,c=3)
-def function4(arg:int): #ensures arg is an int
-    pass
+def function4(arg:int) -> int: #ensures arg is an int and ensures the output is an int
+    '''
+    can be accessed through function4.__doc__
+    Used to explain what the function does,
+    Parameter Information
+    Configuration 
+    '''
+
 
 ################# Object Orientated Programming ######################
 #4 principles:
@@ -375,6 +382,11 @@ class Graph():
 ##################### Testing ##################
 #run in bash 
 #python3 -m pytest <testfile> --cov= <directory>/<file to test>
+
+############# Automatic Doccumentation ##########
+
+#-m pydoc -w <Filename>
+
 
 
 # 3rd-party libraries web-based

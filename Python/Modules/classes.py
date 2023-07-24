@@ -1,10 +1,22 @@
 class student:
-    def __init__(self,age,group,name='student'):
+    '''
+    Used to create and manipulate studetn class objects.
+    contains the following methods:
+    def avg_score(scr1,scr2,scr3) - used to find the average scores of the student
+
+    '''
+    def __init__(self,age:int,group:str,name:str='student') -> None:
+        '''assigns all the attributes to the object
+        '''
         self.name = name
         self.age = age
         self.group = group
 
-    def avg_score(self,scr1,scr2,scr3):
+    def avg_score(self,scr1:float,scr2:float,scr3:float) -> None:
+        '''
+        Takes the 3 scores the student obtained, and outputs tthe mean average score of the 3
+        as an integer value
+        '''
         print(f"{self.name} scored and average of {(scr1+scr2+scr3)//3}")
     
 athena = student(22,'AMS - Awesomely Masterful Students','Athena')
