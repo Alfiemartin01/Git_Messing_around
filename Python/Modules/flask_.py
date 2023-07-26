@@ -8,6 +8,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return (f'{firstname[randint(0,len(firstname))]} {lastname[randint(0,len(lastname))]}')
+    return (f'{firstname[randint(0,len(firstname)-1)]} {lastname[randint(0,len(lastname)-1)]}')
 
 app.run()
