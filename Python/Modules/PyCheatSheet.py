@@ -166,6 +166,7 @@ if any([i % 2 == 0 for i in nums]): #only runs the code if there's an even item
 for v in enumerate(nums): #runs with v being (i,nums[i])
     pass
 
+sorted(nums, key=Function) # sorts the list, via the functions return values 
 ################ Functional Programming ########################################
 def func_1(x):    
     if 1==1:

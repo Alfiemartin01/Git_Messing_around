@@ -17,7 +17,6 @@ def file_r() -> None:
 
 
 
-
 root=tkinter.Tk()
 
 path_lbl = tkinter.Label(root, text='Please input a file path')
