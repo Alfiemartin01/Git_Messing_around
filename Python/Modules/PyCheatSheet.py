@@ -46,29 +46,32 @@ def Function():             #Creates a new function which can be called upon
 ######################## Basic List Operations #################################
 
     listE = [1,2,3,4,5] #creates a list of 5 items from 1 to 5
-
-    if 1 in listE: #checks to see if 1 is in the list
-        pass
-    listE.count(1) #Counts the amount of 1's in the list
-    listE.append(6) #adds item 6 to the end of the list
-    listE.insert(0,10) # inserts 10 into th first position
-    if listE.index(10) == 0: #checks the position of 10 in the list
-        pass
-    
-    if list(range(5,10,2)) == [5,7,9]: #creates a list with numbers between 5 to 10 with step of 2
-        pass
-    
-    for i in listE: #uses each item in the list as the value of i
-        i += 1
-
-    listE.sort() #sorts the list from lowest to highest value
-    listE.sort(reverse = True) #sorts highest to lowest
-    listE.reverse() #Reverses List
-
     listF = listE[0:4:2] #makes a new list of items 0 to 3 in listE with step 2
     listG = [i**2 for i in range(9) if i%2 == 0] 
     #Creates a list using i from 0 to 8 according to the mathematical notation, only adding the item if it produces a true if statement  
     
+    if 1 in listE: #checks to see if 1 is in the list
+        pass
+    if all([i > 5 for i in listE]): #only runs the code if all items are under 5
+        pass
+    if any([i % 2 == 0 for i in listE]): #only runs the code if there's an even item
+        pass
+
+    for v in enumerate(listE): #runs with v being (i,nums[i])
+        pass
+
+    list(range(5,10,2)) #creates a list of values 
+    listE.count(1) #Counts the amount of 1's in the list
+    listE.append(6) #adds item 6 to the end of the list
+    listE.extend(listF)#Used for append each value from an iterable
+    listE.insert(0,10) # inserts 10 into th first position
+    listE.remove(Int1) #removes the first instance of the value in the list
+    listE.sort() #sorts the list from lowest to highest value
+    listE.sort(reverse = True) #sorts highest to lowest
+    listE.reverse() #Reverses List
+    sorted(listE, key=Function) # sorts the list, via the functions return values 
+    zip(listE,listF) #creates a list of tuples of (listE[i],listF[i])
+
 ###################### Error Handling Operations #############################
 
     try: #runs contents and watches for errors
@@ -84,15 +87,19 @@ def Function():             #Creates a new function which can be called upon
 
 ##################### File Handling Operations ###############################
 
-    fileF = open("filename.txt","r") #opens a file to be read("r") or written("w") to
+    fileF = open("filename.txt","r+") #opens a file to be read("r") or written("w") to
                                       #r+ does both read and write
     cont = fileF.read()  #assigns a variable to the contents of the file
     cont = fileF.read(4) #reads the next 4 characters
+    cont = fileF.readline() #assigns the variable the contents of the next line
     fileF.readlines()   #creates a list where each item is a line
     
     fileF.write("...") #overwrites a file and all the following text
                        #if assigned to a variable, displays amount of characters
-    
+    fileF.writelines(listE) #writes each item of a list on a seperate line    
+
+    fileF.tell() #returns the current position in the file
+
     fileF.close() #closes the opened file
 
 #################### Dictionary Handling Operations ##########################
@@ -102,6 +109,11 @@ def Function():             #Creates a new function which can be called upon
     ages.get("Jasmine", "...") #Returns value associated or returns "..."  by default
     ages["Athena"] = 22 #Adds a new variable to the dictionary
     ages.pop("Tom") #Removes the key and value
+
+    ages.update(ages) #adds the key value pairs from ages to ages 
+    ages.keys() #gives a readable output for all the keys in a dictionary
+    ages.values() #gives a readable output for all values
+    ages.items() #gives readable output for keys and values
 
 ################### String Functions ########################################
     
@@ -141,32 +153,20 @@ def Function():             #Creates a new function which can be called upon
     set_1 - set_2 #Set_1 but not Set_2
     set_1 ^ set_2 #Set_1 XOR set_2
 
-tuple1 = (1,2,3)
-a,b,c = tuple #sets a=1 b=2 c=3
-a,*b = tuple # *b takes the rest of the tuples values
+################# Tuple Functions #############################################
+    tuple1 =(1,2,3)
+    a,b,c = tuple1 #sets a=1 b=2 c=3
+    a,*b = tuple1 # *b takes the rest of the tuples values
 
-a=1 if b>=5 else 10 # a=1 if true, if false, a=10
+    a=1 if b>=5 else 10 # a=1 if true, if false, a=10   
 ################### Numerical Functions #######################################
 
 print(min(1, 2, 3, 4, 0, 2, 1)) #finds the minimum value in a list
 print(max([1, 4, 9, 2, 5, 6, 8])) #finds the maximum value in a list
 print(abs(-99)) #finds the absolute value 
+print(round(99.1234,2)) #round the number to 2dp
 print(sum([1, 2, 3, 4, 5])) #sums all the items in the list
  
-################### List Functions ############################################
-
-nums = [55, 44, 33, 22, 11]
-
-if all([i > 5 for i in nums]): #only runs the code if all items are under 5
-    pass
-
-if any([i % 2 == 0 for i in nums]): #only runs the code if there's an even item
-    pass
-
-for v in enumerate(nums): #runs with v being (i,nums[i])
-    pass
-
-sorted(nums, key=Function) # sorts the list, via the functions return values 
 ################ Functional Programming ########################################
 def func_1(x):    
     if 1==1:
@@ -471,27 +471,20 @@ class Graph():
     r"\d\s\w" #\d is 1 digit, \s is 1 whitespace, \w is one character
     r"\D" #capital versions give the opposite result
     r"\A\Z\b" #\A \z anchors beginning and end of string, \b space or special character at start or end of string
-    rStr1 = r"H..E.."
+    Re1 = re.compile(r"H..E..") #used to create an rstring object
     Str2 = "H....3"
-    re.match(rStr1, Str2) 
-    #see if the start of Str2 matches rStr1 at any point
-    re.search(rStr1,Str2)
-    #looks to see if rStr1 is anywhere within Str2
-    re.findall(rStr1,Str2)
-    #Creates a list of all the instances where rStr1 is in Str2
-    re.finditer(rStr1,Str2)
-    #Returns the amount of times rSrt1 appears in Str2
-    Re1.group()
-    #Returns the string matched
-    Re1.start()
-    #Returns the starting position of the first match
-    Re1.end()
-    #Returns the end position of the first match
-    Re1.span()
-    #Returns a tuple of the start and end position of the first match
-    re.sub(rStr1,Str2,Str3,count=Int1)
-    #Replaces Int1 instances of rStr1 in Str3 with Str2 
-
+    Str1 = "Hwllo"
+    m1 = Re1.match(Str2) #see if the start of Str2 matches rStr1 at any point
+    Re1.search(Str2) #looks to see if rStr1 is anywhere within Str2
+    Re1.findall(Str2) #Creates a list of all the instances where rStr1 is in Str2
+    Re1.finditer(Str2) #Returns the amount of times rSrt1 appears in Str2
+    
+    m1.group() #Returns the string matched
+    m1.start() #Returns the starting position of the first match
+    m1.end() #Returns the end position of the first match
+    m1.span() #Returns a tuple of the start and end position of the first match
+    Re1.sub(Str1,Str2,count=Int1) #Replaces Int1 instances of matches in Str1 with Str2 
+ 
 ############# random ##############################
     import random as rng
     #Integer Random Operators
@@ -511,8 +504,6 @@ class Graph():
     rng.gammavariate(alpha,beta) #Return a value from the gamma distribution
     rng.gauss(mu,sigma) #Return a value from the normal distribution
     rng.lognormvariate(mu,sigma) #Return a value from the log normal distribution
-###########Abstract Base Class ####################
-    import abc
 
 
 ############# NumPy ###############################

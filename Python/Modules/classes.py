@@ -94,6 +94,40 @@ print(r1.perim())
 
 
 
+######Clock
+class Clock:
+    def __init__(self,hour,minute,second):
+        self.hour = hour
+        self.minute = minute
+        self.second = second
+        self._organise()
+    
+    def __str__(self):
+        return(f'{self.hour}:{self.minute}:{self.second}')
+    
+    def tick(self):
+        self.second += 1
+        self._organise()
+
+    def _organise(self):
+        while (self.second >= 60) or (self.minute >= 60):
+            if self.second == 60:
+                self.second -= 60
+                self.minute += 1
+            if self.minute == 60:
+                self.minute -= 60
+                self.hour += 1
+
+class Hr12clock(Clock):
+
+    def _orangise(self):
+        Clock._organise(self)
+        while self.hour >= 12:
+            self.hour -= 12
+    def tick(self):
+        self.second +=1
+        self._orangise()
+
 ######LotteryBall
 
 import random

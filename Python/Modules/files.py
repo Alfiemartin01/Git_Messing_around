@@ -21,7 +21,7 @@ file.close()
 
 
 #1. Write a Python program to read an entire text file.
-file = open('file1.txt','r')
+file = open('teams.txt','r')
 
 print(file.readlines())
 file.close()
@@ -60,8 +60,8 @@ file.close()
 
 #10. Write a Python program to count the frequency of words in a file.
 
-file = open('file1.txt','r')
-
+file = open('teams.txt','r')
+print(file.tell())
 filelist = file.readlines()
 
 for i in range(len(filelist)):
