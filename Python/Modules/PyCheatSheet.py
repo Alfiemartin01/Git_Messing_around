@@ -591,10 +591,11 @@ class Graph():
     app.run(debug=True, host='0.0.0.0') #runs the app (in debug mode) host is usually local by default, by setting to 0.0.0.0 allows for all traffic
 
     @app.route('/Path') #sets an endpoint to the app
-    def index(): 
-        pass
+    @app.route('/Path/<int:num>')
+    def index(num:int): 
+        return('Random Name Generator',200)
 
-
+    fl.request.args.get()
 ########### os.path ########################
     import os.path 
   
