@@ -71,6 +71,67 @@
 
         </p>    
 
+        <form method="get" action="/HTML. CSS. JS/Exercises/hyperlinks/index.html">
+            <!--Method : how information is passed . GET: appends info to URL. 
+                POST: sends info privately -->
+            <!--Action : where the data in sent-->
+            Textbox:
+            <input type="text" mame="tbx1" placeholder="Enter Text" value="Default">
+            
+            <!--Button types: reset submit button-->
+            <button type="reset" name="reset btn" value="reset form">
+                reset button
+            </button>
+
+            <!--multiline text box-->
+            <textarea name="UsrAddr" rows="7" cols="24" >
+                Enter address here
+            </textarea>
+
+            <!--Check boxes and radio boxes -->
+            <input type="radio" name="RadioDrink" value="Tea"/>Tea
+            <input type="radio" name="RadioDrink" value="Coffee"/>Coffee
+            <input type="radio" name="RadioDrink" value="Soup"/>Soup
+            <br/>
+            <input type="checkbox" name="CheckMilk" value="Yes"/>Milk
+            <input type="checkbox" name="CheckSugar" value="Yes"/>Sugar
+
+            <!--Dropdown lists-->
+            <select id="cars" name="cars" size="1">
+                <option value="audi">Audi</option>
+                <option value="bmw" selected>BMW</option>
+                <option value="mercedes">Mercedes</option>
+            </select>
+
+            <input list="browsers" />
+            <datalist id="browsers">
+                <option value="Internet Explorer">
+                <option value="Firefox">
+                <option value="Google Chrome">
+                <option value="Opera">
+                <option value="Safari">
+            </datalist>
+
+            <input type="email" name="email"/>
+            <input type="url" name="url"/>
+            <input type="number" min="1" max="100" step="2" name="phoneNumber"/>
+            <input type="date" name="myBirthday"/>
+            <input type="colour" name="myFavColour"/>
+            <input type="text" pattern="[0-9]{13,16}" name="creditCardNumber"/>
+            <!--Sliders-->
+            <input type="range" min="1" max="10" name="ourService" value="9"/>
+
+            <fieldset>
+                <legend>Your details</legend>
+                <label for="fname">First name</label>
+                <input id="fname" type="text">
+                <label for="sname">First name</label>
+                <input id="sname" type="text">
+                <label for="age">Age</label>
+                <input id="age" type="number">
+            </fieldset>
+
+        </form>
 
     </body>
 
