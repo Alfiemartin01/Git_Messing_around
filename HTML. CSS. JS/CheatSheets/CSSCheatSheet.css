@@ -48,10 +48,6 @@ ol, li{
 table *{
     color:darkred
 }
-/* hover selectors */
-p:hover{
-    background-color: gray;
-}
 /* direct descendants */
 body > p{
     border-style: double;
@@ -64,4 +60,28 @@ h1 ~ p{
 /* adjacent selectors */
 h1 + p{
     border-color: blue;
+}
+/* Pseudo Selector */
+p:hover{
+    background-color: gray;
+}
+/* Selecting by attribute */
+a[href="/HTML. CSS. JS/Exercises/Text_formatting.html"]{
+    color:darkolivegreen
+}
+/* starting with */
+a[href^="/"]:active{
+    color: palegreen
+}
+/* after */
+a[href$=".html"]:hover{
+    background-color: paleturquoise;
+}
+/* contains */
+a[href*="a"]{
+    border-color: peru;
+}
+/* pseudo elements */
+p::first-letter{
+    text-decoration: overline;
 }

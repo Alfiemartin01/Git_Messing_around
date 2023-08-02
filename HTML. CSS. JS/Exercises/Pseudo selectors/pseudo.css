@@ -1,0 +1,19 @@
+p::first-line{
+    color:blue
+}
+p::first-letter{
+    color: red;
+    font-size: xx-large ;
+}
+p::before{
+    content:"IMPORTANT"
+}
+p::after{
+    content:"thanks!"
+}
+p[class="highlight"]:hover{
+    background-color: coral;
+}
+input:focus{
+    background-color: lightblue;
+}
