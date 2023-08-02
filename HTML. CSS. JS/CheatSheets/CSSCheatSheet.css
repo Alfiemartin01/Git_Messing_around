@@ -85,3 +85,37 @@ a[href*="a"]{
 p::first-letter{
     text-decoration: overline;
 }
+/* spatial Attrivutes */
+img{
+    /* see image in folder */
+    margin:auto; /*Centres the object*/
+    width:50%; /*covers 50% of the width of the page*/
+    /*position:absolute; /*can overlap elements*/*/
+
+    /*overflow*/
+    overflow: hidden;
+    /* hidden : hides element if overflows 
+    scroll : allows the image to be scrolled
+    auto : adds scrolls when needed*/
+
+}
+li{
+    /* allows the object to be on line with other objects */
+    display: inline;
+
+    /*object hiding
+    display:none   : removes object
+    visibility: hidden   : hides object but keeps space*/
+
+    /* Positional properties:
+    static : default, 
+    relative : allows to be position based on static position
+    fixed : the position fixes to be page, despite the page moving
+    absolute : is positioned to nearest non static parent
+    sticky : position based on users scroll position */
+
+    /* changes the order of the overlapping objects */
+    z-index: 0; /*the higher the number, the */
+    
+    
+}

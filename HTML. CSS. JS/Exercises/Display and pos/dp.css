@@ -1,0 +1,22 @@
+h1{
+    visibility: hidden;
+}
+li{
+    display: inline;
+}
+strong{
+    display: block;
+}
+.imageoverlap{
+    position: relative;
+
+}
+
+.tfori{
+    color: hotpink;
+    font-size: xx-large;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 70px;
+}
