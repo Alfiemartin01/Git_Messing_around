@@ -18,3 +18,50 @@ h1{
     transform-origin: left;
     transform: scale(1,3)translate(200px,10px)rotate(45deg) rotatey(20deg) skew(20deg,10deg) scale(-1,1);
 }
+
+/* Selector Types */
+/* selects all elements */
+*{
+    color: hotpink
+}
+/* all paragraphs */
+p{
+    color:darkgreen
+}
+/* ID Selector */
+#first{
+    color: indigo
+}
+/* Class Selector */
+.lists{
+    color: cornflowerblue
+}
+/* Targets only spans which are in divs */
+div span{
+    color: blue;
+}
+/* Selecting multiple */
+ol, li{
+    color:darkviolet
+}
+/* all in selectors */
+table *{
+    color:darkred
+}
+/* hover selectors */
+p:hover{
+    background-color: gray;
+}
+/* direct descendants */
+body > p{
+    border-style: double;
+    border-color: black;
+}
+/* Any elements after */
+h1 ~ p{
+    background-color: black;
+}
+/* adjacent selectors */
+h1 + p{
+    border-color: blue;
+}
