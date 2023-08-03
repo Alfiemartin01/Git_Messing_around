@@ -1,3 +1,5 @@
+"use strict"; //enables strict mode
+
 // Console Outputs
 console.log('This is a console log');
 console.info('This is a console info');
@@ -8,7 +10,7 @@ let Var1 = 100;
 const Const1 = 5;
 var car= {type:"Audi", model:"A5"}; //this is an example of an object
 console.log("this is a %c a message with some CSS."+Const1,"color: yellow; font-style: italic; background-color: blue;padding: 2px");
-console.log(`This allows us to implement vars in strings like ${Var1}`)
+console.log(`This allows us to implement vars in strings like ${Var1}`);
 
 //Primitive data types - Immutable, fixed length, quick to look up
 ////Boolean
@@ -31,13 +33,30 @@ typeof(Var1); //returns the var type
 //Number.MIN_VALUE	
 
 //Do maths before outputting results.
-let str1 = `${Var1 + Const1}`
+let str1 = `${Var1 + Const1}`;
 
 console.log(Var1 == Const1); //Checks values
 console.log(Var1 === Const1); //Check type AND value
 
-str1.indexOf('1') //finds position of first occurence of 1
-str1.charAt(1) //returns value in position 1
-str1.toUpperCase() //Converts string to uppercase 
-eval('5*8') //evaluates the maths of a string 
+str1.indexOf('1'); //finds position of first occurence of 1
+str1.charAt(1); //returns value in position 1
+str1.toUpperCase(); //Converts string to uppercase 
+eval('5*8'); //evaluates the maths of a string 
+
+for(let i = 0; i <= 9; i+=1){ //loops 10 times
+    console.log(i);
+}
+
+let i = 0;
+while(i != 10){ //while loop
+    console.log(i);
+    i+=1;
+    if (i>=5){
+        break; //breaks out of loop
+    }
+}
+do { //do loop
+    console.log(i)
+    i-=1
+} while(i != 0)
 
