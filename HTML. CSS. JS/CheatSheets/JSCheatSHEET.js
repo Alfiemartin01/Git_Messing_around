@@ -35,8 +35,6 @@ typeof(Var1); //returns the var type
 //Do maths before outputting results.
 let str1 = `${Var1 + Const1}`;
 
-console.log(Var1 == Const1); //Checks values
-console.log(Var1 === Const1); //Check type AND value
 
 str1.indexOf('1'); //finds position of first occurence of 1
 str1.charAt(1); //returns value in position 1
@@ -55,8 +53,56 @@ while(i != 10){ //while loop
         break; //breaks out of loop
     }
 }
+
 do { //do loop
-    console.log(i)
-    i-=1
+    console.log(i);
+    i-=1;
 } while(i != 0)
+
+//Conditionals
+if(Var1==Const1){
+    
+}else if(Var1!=Const1){
+
+}else{    
+}
+
+switch(Const1){
+    case 2:
+    case 3:
+        console.log(`Const = 2 or 3`);
+        break;
+    case 5:
+        console.log(`Const = 5`);
+        break;
+    default:
+        console.log('some other number')
+}
+
+//False Elements:
+//false
+//0
+//'' or "" 
+//undefined
+//null
+//NaN
+
+//True Elements:
+//'0' - (String containing single digit 0 )
+//'false' - (String containing text - 'false')
+//[] - (An empty array)
+//{} - (An empty object)
+//function(){}
+
+console.log(Var1 == Const1); //Checks values
+console.log(Var1 === Const1); //Check type AND value
+
+let age = (Const1 == 5)? 10 : 20; //10 if true, 20 if false
+//User inputs:
+let inp = parseInt(prompt("Enter value"));
+
+// && AND operator
+// || OR 
+// ^  XOR bitwise operator
+
 
