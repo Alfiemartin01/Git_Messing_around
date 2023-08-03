@@ -7,7 +7,7 @@ console.error('This is a console error');
 let Var1 = 100;
 const Const1 = 5;
 
-console.log("this is a %c a message with some CSS."+myTxt,"color: yellow; font-style: italic; background-color: blue;padding: 2px");
+console.log("this is a %c a message with some CSS."+Const1,"color: yellow; font-style: italic; background-color: blue;padding: 2px");
 console.log(`This allows us to implement vars in strings like ${Var1}`)
 //Primitive data types - Immutable, fixed length, quick to look up
 ////Boolean
@@ -20,4 +20,20 @@ console.log(`This allows us to implement vars in strings like ${Var1}`)
 //Object - collections of properties, mutable
 
 typeof(Var1); //returns the var type
+
+//Number types:
+//Number.NaN
+//Number.Infinity
+//Number.POSITIVE_INFINITY
+//Number.NEGATIVE_INFINITY	
+//Number.MAX_VALUE	
+//Number.MIN_VALUE	
+
+//Do maths before outputting results.
+let str1 = `${Var1 + Const1}`
+
+str1.indexOf('1') //finds position of first occurence of 1
+str1.charAt(1) //returns value in position 1
+str1.toUpperCase() //Converts string to uppercase 
+
 
