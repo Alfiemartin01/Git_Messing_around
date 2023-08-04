@@ -105,4 +105,67 @@ let inp = parseInt(prompt("Enter value"));
 // || OR 
 // ^  XOR bitwise operator
 
+//object creation and handling
+
+let obj1 = {
+    name: 'name1',
+    age: 0,
+    job: 'be object'
+}
+let obj2 = new Object(); 
+obj2.name = 'name2';
+obj2.age = 0;
+obj2["job"] = 'also be object';
+
+console.log(obj1.name); //outputs obj1's name
+console.log(obj2['name']); //outputs obj2's name
+
+for(let key in obj2){ //loops through an objects keys
+    console.log(`${key}: ${obj2[key]}`)
+}
+
+//Array creation and handling
+
+let a = Array(); //empty array
+let b = Array(10); //Array with 10 empty spaces
+let c = ['Hello','World']; //Creates an array with elements Hello and World
+
+c[0] = 'Hi'; //changes the item in position 0 to Hi
+
+for(let index of c){ //loops through the values instead of positions
+    console.log(index);
+}
+let index = 0;
+c.sort(); //sorts the array
+c.reverse(); //reverses the array
+c.join(' '); //join the items of the array into a string
+c.push(str1); //appends value to the end of the array
+c.pop(); //takes off a value from  the end
+c.unshift(str1); //append element to beginning
+c.shift(); //remove from beginning of array
+c.indexOf(str1); //find the first occurence position of str1
+c.splice(index,1); //removes items at the index position up to a given number of items
+
+//JSON
+//Language indepentent data interchange format
+//means it's used to tranfer data
+
+//keys must be string
+//values must be:
+//string
+//int
+//bool
+//object
+//array
+//null
+
+let jsonObj = {
+    'key1':'val1',
+    'key2':'vaL2'
+}
+// this 
+objString = '{"name": "Athena"}'; //JSON string
+let obj3 = JSON.parse(objstring); //converts JSON string into object
+
+let jsonStr = JSON.stringify(); //converts object into JSON string
 
