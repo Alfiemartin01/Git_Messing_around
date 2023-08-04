@@ -169,3 +169,24 @@ let obj3 = JSON.parse(objstring); //converts JSON string into object
 
 let jsonStr = JSON.stringify(); //converts object into JSON string
 
+
+//functions
+function func1(num1,num2){ //creates function
+    return(num1+num2) 
+}
+
+func1(5,10); //runs function
+
+//function expressions:
+let myfunc = function(num1,num2){
+    console.log(num1+num2);
+}
+//can be used as a variable.
+myfunc(4,5); //9
+
+//arrow functions:
+const arrfunc = (num1,num2)=>{
+    console.log(num1+num2);
+}
+//arrow function with return
+let arrfunc2 = (num1,num2) => (num1+num2)
