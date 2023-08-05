@@ -164,8 +164,8 @@ let jsonObj = {
     'key2':'vaL2'
 }
 // this 
-objString = '{"name": "Athena"}'; //JSON string
-let obj3 = JSON.parse(objstring); //converts JSON string into object
+let objString = '{"name": "Athena"}'; //JSON string
+let obj3 = JSON.parse(objString); //converts JSON string into object
 
 let jsonStr = JSON.stringify(); //converts object into JSON string
 
@@ -190,3 +190,26 @@ const arrfunc = (num1,num2)=>{
 }
 //arrow function with return
 let arrfunc2 = (num1,num2) => (num1+num2)
+
+//scopes
+//block scopes
+////let
+////const
+//function scopes
+////var
+
+//Selectors
+let resetBtn = document.querySelector("#resetbtn"); //assigns button in html a variable
+let txtbox = document.querySelector("#inputbx");
+let maindiv = document.querySelector("#maindiv");
+//Functionality
+let val1 = txtbox.value; //take contents of textbox
+let div1 = document.createElement("div"); //create a div
+let val2 = document.createTextNode(val1); //create a text node with text
+
+div1.appendChild(val2); //add textnode to the JS div
+maindiv.appendChild(div1); //add the JS div to the html div
+
+
+//Event Listeners
+resetBtn.addEventListener('click',func1) //when button is clicked, func1 runs
