@@ -202,6 +202,7 @@ let arrfunc2 = (num1,num2) => (num1+num2)
 let resetBtn = document.querySelector("#resetbtn"); //assigns button in html a variable
 let txtbox = document.querySelector("#inputbx");
 let maindiv = document.querySelector("#maindiv");
+
 //Functionality
 let val1 = txtbox.value; //take contents of textbox
 let div1 = document.createElement("div"); //create a div
@@ -209,7 +210,18 @@ let val2 = document.createTextNode(val1); //create a text node with text
 
 div1.appendChild(val2); //add textnode to the JS div
 maindiv.appendChild(div1); //add the JS div to the html div
-
-
+maindiv.innerHTML("") //empties inside of the div
+maindiv.setAttribute("class","classname") //assigns a class to the div
 //Event Listeners
 resetBtn.addEventListener('click',func1) //when button is clicked, func1 runs
+
+//Axios Script
+//<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+axios.get('fakeapi.com')
+    .then((response) =>{
+        //console.log(response.data)
+        displayresult(response.data);
+    })
+    .catch((err) =>{
+        console.error(err)
+    })
