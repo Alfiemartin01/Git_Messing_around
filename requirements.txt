@@ -1,4 +1,6 @@
 flask
+flask_sqlalchemy
+pymysql
 numpy
 PIL
 tk

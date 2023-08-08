@@ -4,18 +4,24 @@ from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__) #Creates a Flask object
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password@localhost:3306/pythondb'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 db = SQLAlchemy(app)
 
-
-class Person(db.Model):
+class Product(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    prod_name = db.Column(db.String(30), nullable=False)
+    product = db.relationship('Order_Product',backref='productbr') #used to define relationships between tables
+class Order(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    order_name = db.Column(db.String(30), nullable=False)
+    order = db.relationship('Order_Product',backref='orderbr') #used to define relationships between tables
+class Order_Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(30), default="Athena")
-    last_name = db.Column(db.String(30), unique=True)
-    alive = db.Column(db.Boolean, nullable=False)
-    datetime = db.Column(db.DateTime)
+    order_id = db.Column(db.Integer,db.ForeignKey('order.id'), nullable=False)
+    prod_id = db.Column(db.Integer,db.ForeignKey('product.id'), nullable=False)
 
-new_user = Person(first_name='Athena',last_name='Martin',alive=True)
+
 
 @app.route('/') #runs when the url end point matches
 def main():
