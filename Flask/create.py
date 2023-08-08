@@ -1,4 +1,4 @@
-from app import app,db,Order,Order_Product,Product
+from application import app,db
 
 
 with app.app_context():

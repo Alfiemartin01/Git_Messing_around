@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<p>this is the actual paragrpah</p>
+{% endblock contents %}
+
+<!--if statement-->
+{% if name %}   
+<h1>hello {{ name }}</h1>
+{% else %}
+<h1> it failed </h1>
+{% endif %}
+
+<!--for loops-->
+{% for name in ['Tim','Dave','Athena'] %}
+<p>{{ name }}</p>
+{% endfor %}

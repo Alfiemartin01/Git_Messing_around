@@ -1,0 +1,18 @@
+<body>
+    <h1>Add a new person</h1>
+    <p>
+        <div class="form">
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                {{ form.name.label }} {{ form.name }}
+                <br>
+                {{ form.age.label }} {{ form.age }}
+                <br>
+                {{ form.hair_col.label }} {{ form.hair_col }}
+                <br>
+                {{ form.submit }}
+
+            </form>
+        </div>
+    </p>
+</body>
