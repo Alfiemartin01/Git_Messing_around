@@ -111,12 +111,12 @@ VALUES
 ('2023-07-07',1,2,1),
 ('2023-03-17',2,2,1);
 
-SELECT Emp_First_Name,Salary
-FROM Employee
-WHERE Salary > 25000
-UPDATE Employee
-SET Salary = 25000;
+--SELECT Emp_First_Name,Salary
+--FROM Employee
+--WHERE Salary > 25000
+--UPDATE Employee
+--SET Salary = 25000;
 
-DELETE 
-FROM Games
-WHERE Game_Price > 100;
+--DELETE 
+--FROM Games
+--WHERE Game_Price > 100;
