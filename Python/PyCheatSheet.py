@@ -582,6 +582,12 @@ class Graph():
     
     New_Image.save("Path to png file")
     #Saves the image to a new file location
+########### os ########################
+    import os
+  
+    if os.path.exists("Path to file") == True:
+        pass
+    #checks if a file exists in a given location
 
 ########### Flask ##########################
     import flask as fl
@@ -600,12 +606,55 @@ class Graph():
     fl.redirect('http://www.google.com') #redirects to a different webpage
     fl.url_for("index") #returns a URL inbuilt page based on function name
      
-########### os.path ########################
-    import os.path 
-  
-    if os.path.exists("Path to file") == True:
-        pass
-    #checks if a file exists in a given location
+    #type: mysql+pymysql:// 
+    #user:pass : root:password
+    #location: @localhost:3306
+    #exact db: /world
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password@localhost:3306/world' #databses from mysql
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db' #in-built databases into the application
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI') #private as database is added through console
+    #all used to add a databse to the webpage
 
+
+################## flask_sqlalchemy
+    import flask_sqlalchemy as fl_sql
+
+    db = fl_sql.SQLAlchemy(app) #creates a database object
+
+    class Family(db.Model):
+        id = db.Column(db.Integer, primary_key=True)
+        fam_name = db.Column(db.String(30), nullable=False)
+        people = db.relationship('Person',backref='familybr') #used to define relationships between tables
+    class Person(db.Model):
+        id = db.Column(db.Integer, primary_key=True)
+        first_name = db.Column(db.String(30), default="Athena")
+        alive = db.Column(db.Boolean, nullable=False)
+        fam_id = db.Column(db.Integer,db.ForeignKey('family.id'), nullable=False)
+    
+    new_fam = Family(fam_name='Martin')
+    db.session.add(new_fam)
+    db.session.commit()
+
+    new_person = Person(first_name='Athena',alive=True, familybr=new_fam)
+    db.session.add(new_person)
+    db.session.commit()
+
+    all_people = Person.query.all() #return a list of all people as objects of type Person
+    first_person = Person.query.first() #return the first entry in the table
+    johns = Person.query.filter_by(first_name="John").all() #filters all result with first name John
+    person_with_id_1 = Person.query.get(1) #returns person with id 1
+    person_in_order = Person.query.order_by(Person.name.desc()).all() #order by Person name in descending order
+    first_2_people = Person.query.limit(2).all() #returns first 2 people
+    number_of_people = Person.query.count() #returns number of people in db
+
+    #Updating records
+    first_person = Person.query.first()
+    first_person.first_name = "New name"
+    db.session.commit()
+
+    #Deleting records
+    person_to_delete = Person.query.first()
+    db.session.delete(person_to_delete)
+    db.session.commit()
 
 Function() #Calls the function
