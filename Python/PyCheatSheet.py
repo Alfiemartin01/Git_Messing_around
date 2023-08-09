@@ -390,7 +390,7 @@ class Graph():
 
 ##################### Testing ##################
 #run in bash 
-#python3 -m pytest <testfile> --cov= <directory>/<file to test>
+#python3 -m pytest <testfile> --cov= <directory>/<file to test> --cov-report html
 
 ############# Automatic Doccumentation ##########
 
@@ -590,85 +590,139 @@ class Graph():
     #checks if a file exists in a given location
 
 ########### Flask ##########################
-    import flask as fl
+import flask as fl
 
-    app = fl.Flask(__name__)  #creates a Flask app object
+app = fl.Flask(__name__)  #creates a Flask app object
     
-    app.run(debug=True, host='0.0.0.0') #runs the app (in debug mode) host is usually local by default, by setting to 0.0.0.0 allows for all traffic
+app.run(debug=True, host='0.0.0.0') #runs the app (in debug mode) host is usually local by default, by setting to 0.0.0.0 allows for all traffic
 
-    @app.route('/Path', methods=['GET','POST']) #sets an endpoint to the app with specific request methods
-    @app.route('/Path/<int:num>') #used to collect an integer variable out of the URL
-    def index(num:int): 
-        return('Random Name Generator <br> This is a newline') #displays on page, with html elements also!
+@app.route('/Path', methods=['GET','POST']) #sets an endpoint to the app with specific request methods
+@app.route('/Path/<int:num>') #used to collect an integer variable out of the URL
+def index(num:int): 
+    return('Random Name Generator <br> This is a newline') #displays on page, with html elements also!
     
-    fl.request.method() #used to see which method is being used
-    fl.request.args.get()
-    fl.redirect('http://www.google.com') #redirects to a different webpage
-    fl.url_for("index") #returns a URL inbuilt page based on function name
+fl.request.method() #used to see which method is being used
+fl.request.args.get()
+fl.redirect('http://www.google.com') #redirects to a different webpage
+fl.url_for("index") #returns a URL inbuilt page based on function name
      
     #type: mysql+pymysql:// 
     #user:pass : root:password
     #location: @localhost:3306
     #exact db: /world
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password@localhost:3306/world' #databses from mysql
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db' #in-built databases into the application
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI') #private as database is added through console
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:password@localhost:3306/world' #databses from mysql
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db' #in-built databases into the application
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URI') #private as database is added through console
     #all used to add a databse to the webpage
 
-    fl.render_template('index.html' name='John') #used to display html file
+fl.render_template('index.html' name='John') #used to display html file
 
 ################## flask_sqlalchemy
-    import flask_sqlalchemy as fl_sql
+import flask_sqlalchemy as fl_sql
 
-    db = fl_sql.SQLAlchemy(app) #creates a database object
+db = fl_sql.SQLAlchemy(app) #creates a database object
 
-    class Family(db.Model): #functions as a table in a database
-        id = db.Column(db.Integer, primary_key=True)
-        fam_name = db.Column(db.String(30), nullable=False)
-        people = db.relationship('Person',backref='familybr') #used to define relationships between tables
-    class Person(db.Model):
-        id = db.Column(db.Integer, primary_key=True)
-        first_name = db.Column(db.String(30), default="Athena")
-        alive = db.Column(db.Boolean, nullable=False)
-        fam_id = db.Column(db.Integer,db.ForeignKey('family.id'), nullable=False) #sets up a foreign key with the family db
+class Family(db.Model): #functions as a table in a database
+    id = db.Column(db.Integer, primary_key=True)
+    fam_name = db.Column(db.String(30), nullable=False)
+    people = db.relationship('Person',backref='familybr') #used to define relationships between tables
+class Person(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    first_name = db.Column(db.String(30), default="Athena")
+    alive = db.Column(db.Boolean, nullable=False)
+    fam_id = db.Column(db.Integer,db.ForeignKey('family.id'), nullable=False) #sets up a foreign key with the family db
     
-    new_fam = Family(fam_name='Martin') #create new family object 
-    db.session.add(new_fam) #add new record to db
-    db.session.commit() #commit changes
+new_fam = Family(fam_name='Martin') #create new family object 
+db.session.add(new_fam) #add new record to db
+db.session.commit() #commit changes
 
-    new_person = Person(first_name='Athena',alive=True, familybr=new_fam)
-    db.session.add(new_person)
-    db.session.commit()
+new_person = Person(first_name='Athena',alive=True, familybr=new_fam)
+db.session.add(new_person)
+db.session.commit()
 
-    all_people = Person.query.all() #return a list of all people as objects of type Person
-    first_person = Person.query.first() #return the first entry in the table
-    johns = Person.query.filter_by(first_name="John").all() #filters all result with first name John
-    person_with_id_1 = Person.query.get(1) #returns person with id 1
-    person_in_order = Person.query.order_by(Person.name.desc()).all() #order by Person name in descending order
-    first_2_people = Person.query.limit(2).all() #returns first 2 people
-    number_of_people = Person.query.count() #returns number of people in db
+all_people = Person.query.all() #return a list of all people as objects of type Person
+first_person = Person.query.first() #return the first entry in the table
+johns = Person.query.filter_by(first_name="John").all() #filters all result with first name John
+person_with_id_1 = Person.query.get(1) #returns person with id 1
+person_in_order = Person.query.order_by(Person.name.desc()).all() #order by Person name in descending order
+first_2_people = Person.query.limit(2).all() #returns first 2 people
+number_of_people = Person.query.count() #returns number of people in db
 
-    #Updating records
-    first_person = Person.query.first()
-    first_person.first_name = "New name"
-    db.session.commit()
+#Updating records
+first_person = Person.query.first()
+first_person.first_name = "New name"
+db.session.commit()
 
-    #Deleting records
-    person_to_delete = Person.query.first()
-    db.session.delete(person_to_delete)
-    db.session.commit()
+#Deleting records
+person_to_delete = Person.query.first()
+db.session.delete(person_to_delete)
+db.session.commit()
 
 ############ wtforms ##################
-    import flask_wtf as fwtf
-    import wtforms as wt
+import flask_wtf as fwtf
+import wtforms as wt
+import wtforms.validators as wtv
+class PersonForm(fwtf.FlaskForm): #Creates a form
+    name = wt.StringField("Name: ") #creates a string input field
+    age = wt.IntegerField("Age: ",validators=[wtv.DataRequired(),wtv.Length(min=2,max=10)]) #validators are used to check the field follows rules
+    hair_col = wt.SelectField("Breed: ",choices=[('Brown','Brown'),('Blonde','Blonde')]) #sleectfield stores the first word chosen, and displays the second to the user as the choice
+    username = wt.StringField("username")
+    submit = wt.SubmitField("Submit")
+
+#Validation Methods
+    def validate_usernamer(self,username): 
+        if username.data.lower() == 'admin':
+            raise wtv.ValidationError("Can't use admin as username")
+        
+class checkAdmin:
+    def __init__(self, message=None):
+        if not message:
+            message = 'please choose another username'
+        self.message = message
+
+    def __call__(self, form, field):
+        if field.data.lower() =='admin':
+            raise wtv.ValidationError(self.message)
+
+###### Flask_testing
+import flask_testing as ft
+
+class TestBase(ft.TestCase): #Setup up mock app for testing
+
+    def create_app(self):
+        app.config.update(
+            SQLALCHEMY_DATABASE_URI='sqlite:///testdata.sqlite', #uses test db
+            DEBUG=True,
+            WTF_CSFR_ENABLED=False) #turns off secret key and 
+        
+        return app
     
-    class PersonForm(fwtf.FlaskForm): #Creates a form
-        name = wt.StringField("Name: ") #creates a string input field
-        age = wt.IntegerField("Age: ")
-        hair_col = wt.SelectField("Breed: ",choices=[('Brown','Brown'),('Blonde','Blonde')]) #sleectfield stores the first word chosen, and displays the second to the user as the choice
-        submit = wt.SubmitField("Submit")
+    def setup(self):
+        db.create_all()
 
+        #Test data
+        test_person = Person('Athena',True)
+        db.session.add(test_person)
+        db.session.commit()
 
+    def teardown(self):
+        db.session.remove()
+        db.drop_all()
+
+class TestViews(TestBase):
+
+    def test_home_get(self): 
+        response = self.client.get(fl.url_for('index'))
+        self.assertEqual(response.status_code,200) #tests get req to index route, status code = 200 if running properly
+        self.assertIn('checks if this is in the page',response.data.decode()) #checks to see if the text is in the page
+
+class TestCrud(TestBase):
+
+    def test_person_form_post(self):
+        response = self.client.post(fl.url_for('person_form_method'), data = dict(first_name='Athena',alive=True))
+        
+        obj1 = Person.query.filter_by(name='Athena').first()
+        self.assertEqual(obj1.name, 'Athena') #see's if object has been created with the name
 
 
 
