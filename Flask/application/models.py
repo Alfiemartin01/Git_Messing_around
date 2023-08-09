@@ -1,6 +1,6 @@
 from application import db
 from flask_wtf import FlaskForm
-
+from wtforms import SelectField,IntegerField,StringField,SubmitField
 
 class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -22,7 +22,7 @@ class Person(db.Model):
     age = db.Column(db.Integer)
     hair_col = db.Column(db.String)
 class PersonForm(FlaskForm): #Creates a form
-    name = wt.StringField("Name: ") #creates a string input field
-    age = wt.IntegerField("Age: ")
-    hair_col = wt.SelectField("Breed: ",choices=[('Brown','Brown'),('Blonde','Blonde')]) #sleectfield stores the first word chosen, and displays the second to the user as the choice
-    submit = wt.SubmitField("Submit")
+    name = StringField("Name: ") #creates a string input field
+    age = IntegerField("Age: ")
+    hair_col = SelectField("Breed: ",choices=[('Brown','Brown'),('Blonde','Blonde')]) #sleectfield stores the first word chosen, and displays the second to the user as the choice
+    submit = SubmitField("Submit")

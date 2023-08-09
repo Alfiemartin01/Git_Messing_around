@@ -1,4 +1,5 @@
 from application import app,db
+from application.models import *
 
 
 with app.app_context():
